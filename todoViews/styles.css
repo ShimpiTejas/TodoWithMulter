@@ -1,0 +1,134 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    color: #333;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  /* Homepage styles */
+  .login-section,
+  .create-account-section {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .login-section h2,
+  .create-account-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .login-section form label,
+  .create-account-section form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .login-section form input,
+  .create-account-section form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-section form input[type="submit"],
+  .create-account-section form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .login-section form input[type="submit"]:hover,
+  .create-account-section form input[type="submit"]:hover {
+    background-color: cadetblue;
+  }
+  
+  .create-account-section a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+  }
+  
+  .create-account-section a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Illegal login styles */
+  .error-page {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .error-page h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .error-page p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .error-page a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .error-page a:hover {
+    background-color: cadetblue;
+  }
+  
+  /* Dashboard styles */
+  .dashboard-section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .logout-section {
+    text-align: center;
+  }
+  
+  .logout-section a {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .logout-section a:hover {
+    background-color: cadetblue;
+  }
+  

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div> <%- include('header') -%> </div>
+    <div id="mndiv" class="mndiv"> 
+        <!-- should be row flex -->
+    <div id="div1" class="div1">
+        <!-- should be column flex -->
+        <h1>Task list</h1>
+        <h2>Add tasks to your list by typing to the right and pressing the enter. You may then view pending tasks below.</h2>
+        <div>
+        <ul id="todo-item">
+            
+        </ul>
+    </div>
+
+
+
+    </div id="div2" class="div2">
+            <!-- should be column flex -->
+
+    <div>
+        <h1>Add Task</h1>
+        <input class="class_text" type="text" id="userInput" name="task" placeholder="I need to...">
+        
+    
+    </div>
+</div>
+</body>
+<script src="/todoScripts.js"></script>
+
+</html>
