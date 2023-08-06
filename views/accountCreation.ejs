@@ -12,14 +12,22 @@
   </header>
   <main>
     <div class="create-account-section">
-      <form action="/accountCreation" method="post">
+      <form action="/accountCreation" method="post" enctype="multipart/form-data">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <label for="username">UserName:</label>
         <input type="textl" id="username" name="username" required>
+        
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
+        
+        <label for="pic">Profile Pic</label>
+        <input type="file" id="pic" name="pic" required />
+        
         <input type="submit" value="Create Account">
+
+
+
       </form>
     </div>
   </main>

@@ -1,7 +1,10 @@
 const express = require('express');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 const app = express();
 const fs = require('fs');
 app.use(express.json())
+
 
 
 app.set('view engine', 'ejs');
@@ -26,7 +29,13 @@ app.use(
 
 app.use(express.json());
 
+// single means that we are uploading a single file
+// array means that we are uploading an array(multiple files) of files
+// "pic" is the name of the input field in the form
+app.use(upload.single('pic'));
 
+
+app.use(express.static('uploads'));
 
 app.get('/style.css', function(req, res) {
     res.sendFile(__dirname + '/todoViews/style.css');
@@ -45,7 +54,7 @@ app.get("/", function (req, res) {
         return;
     }
     console.log(req.session.username);
-    res.render('index', {username: req.session.username});
+    res.render('index', {username: req.session.username, profilePic : req.session.profilePic});
   
 });
 
@@ -133,9 +142,10 @@ app.get("/login", function (req, res) {
   
       const users = JSON.parse(data);
       const user = users.find(u=> u.username ===username && u.password === password);
-  
+      // u.profilePic = profilePic.filename;
       if (user) {
         
+        req.session.profilePic = user.profilePic;
         res.cookie('username', user.username);
         req.session.isLoggedIn = true;
         return res.redirect('/');
@@ -175,14 +185,16 @@ app.get("/accountCreation", function (req, res) {
     const name = req.body.name;
     const username = req.body.username;
     const password = req.body.password;
+    const profilePic = req.file;
   
     console.log(" im called")
-    console.log(name, username, password);
+    console.log(name, username, password, profilePic);
   
     profile = {
       name,
       username,
-      password
+      password,
+      profilePic : profilePic.filename
     }
   
     fs.readFile('userData.json', 'utf-8', (err, data)=>{
@@ -198,7 +210,7 @@ app.get("/accountCreation", function (req, res) {
         return res.status(409).send('User with the same username already exists.');
       }
   
-      users.push({name, username, password })
+      users.push({name, username, password, profilePic: profilePic.filename })
   
       fs.writeFile('userData.json', JSON.stringify(users), (err)=>{
         if(err){
